@@ -7,7 +7,7 @@ int inject()
   if (!gameWindow)
     return 1;
 
-  auto dll_path = "DAPI.dll";
+  const char dll_path[] = "DAPI.dll";
   DWORD processID;
   DWORD hLibModule;
   GetWindowThreadProcessId(gameWindow, &processID);
