@@ -34,6 +34,9 @@
 namespace sf
 {
 ////////////////////////////////////////////////////////////
+// We never actually use winsock_init, it's just to ensure global pointers are
+// set up
+const bool winsock_init = InitializeSFMLWinsock();
 const IpAddress IpAddress::None;
 const IpAddress IpAddress::Any(0, 0, 0, 0);
 const IpAddress IpAddress::LocalHost(127, 0, 0, 1);
