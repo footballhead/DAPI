@@ -23,8 +23,8 @@ namespace DAPI
     Player();
     bool canCast(Spell spell);
     int getID() { return data->pnum; }
-    int getX() { return data->_px; }
-    int getY() { return data->_py; }
+    int getX() const { return data->_px; }
+    int getY() const { return data->_py; }
     int getFutureX() { return data->_pfutx; }
     int getFutureY() { return data->_pfuty; }
     int getDirection() { return data->_pdir; }
