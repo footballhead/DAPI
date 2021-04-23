@@ -115,8 +115,6 @@ struct WSock32
   HMODULE ws2_32;
 };
 
-WSock32 wsock32;
-
 ////////////////////////////////////////////////////////////
 sockaddr_in SocketImpl::createAddress(Uint32 address, unsigned short port)
 {
@@ -173,4 +171,10 @@ Socket::Status SocketImpl::getErrorStatus()
 } // namespace priv
 
 } // namespace sf
+
+bool InitializeSFMLWinsock() {
+  static sf::priv::WSock32 wsock32;
+  return true;
+}
+
 #endif

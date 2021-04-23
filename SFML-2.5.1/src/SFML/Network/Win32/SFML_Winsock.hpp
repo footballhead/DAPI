@@ -250,3 +250,9 @@ extern decltype(__WSAFDIsSet_original)* __WSAFDIsSet;
 #endif
 
 #define FD_ISSET(fd, set) __WSAFDIsSet((SOCKET)(fd), (fd_set FAR *)(set))
+
+/// Set up global pointers dynamically loaded at runtime from winsock.
+/// @returns always true, but that doesn't really matter.
+/// @remarks Call this before doing any meaningful work to avoid the static
+/// initialization fiasco
+bool InitializeSFMLWinsock();
